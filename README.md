@@ -1,1 +1,1 @@
-!(assets/sonic.png "JSONic")
+![](assets/sonic.png "JSONic")
