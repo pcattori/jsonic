@@ -1,5 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 
+import json
 import jsonic
 import tempfile
 import unittest
@@ -10,8 +11,7 @@ TEST_RECORDS = [
 ]
 
 TEST_NEWLINE_JSON = '''{"a": 1, "b": "B"}
-{"a": "A", "b": 2}
-'''
+{"a": "A", "b": 2}'''
 
 class IoTest(unittest.TestCase):
 
@@ -26,7 +26,8 @@ class IoTest(unittest.TestCase):
         with tempfile.TemporaryFile('w+') as f:
             jsonic.write_file(iter(TEST_RECORDS), f)
             f.seek(0)
-            self.assertEqual(f.read(), TEST_NEWLINE_JSON)
+            written = [json.loads(line) for line in f]
+            self.assertEqual(written, TEST_RECORDS)
 
     def test_stream_filepath(self):
         with tempfile.NamedTemporaryFile('w+') as f:
@@ -38,7 +39,8 @@ class IoTest(unittest.TestCase):
         with tempfile.NamedTemporaryFile('w+') as f:
             jsonic.write_filepath(iter(TEST_RECORDS), f.name)
             f.seek(0)
-            self.assertEqual(f.read(), TEST_NEWLINE_JSON)
+            written = [json.loads(line) for line in f]
+            self.assertEqual(written, TEST_RECORDS)
 
 if __name__ == '__main__':
     unittest.main()
