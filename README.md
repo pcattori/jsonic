@@ -1,1 +1,5 @@
-![](assets/sonic.png "JSONic")
+[![PyPI version](https://badge.fury.io/py/jsonic.svg)](https://badge.fury.io/py/jsonic)
+[![Build Status](https://travis-ci.org/pcattori/jsonic.svg?branch=master)](https://travis-ci.org/pcattori/jsonic)
+[![Test Code Coverage](https://codecov.io/gh/pcattori/jsonic/branch/master/graph/badge.svg)](https://codecov.io/gh/pcattori/jsonic)
+[![Documentation Status](https://readthedocs.org/projects/jsonic/badge/?version=latest)](http://jsonic.readthedocs.io/en/latest/?badge=latest)
+![JSONic the Hedgehog](assets/sonic.png "JSONic")
