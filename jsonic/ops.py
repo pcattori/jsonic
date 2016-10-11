@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import collections
 
 def group_by(records, key, value=lambda r: r):
