@@ -14,7 +14,8 @@ def write_file(records, f):
 def stream_filepath(filepath, encoding='utf8'):
     '''TODO docstring'''
     with open(filepath, 'r', encoding=encoding) as f:
-        yield from stream_file(f)
+        for record in stream_file(f):
+            yield record
 
 def write_filepath(records, filepath, encoding='utf8'):
     '''TODO docstring'''
