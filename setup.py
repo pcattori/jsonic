@@ -12,7 +12,7 @@ setup(
     install_requires=[
         'six>=1.10.0'
     ],
-    test_suite='tests'
+    test_suite='tests',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
